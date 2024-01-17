@@ -3,45 +3,50 @@ package at.bxa.basis.oop.auto;
 public class Auto {
     private int iLeistung;
     private String sFarbe;
-    private int iAnzahlRaeder;
-
-    public Auto(int iLeistung, String sFarbe, int iAnzahlRaeder) {
-        this.iLeistung = iLeistung;
-        this.sFarbe = sFarbe;
-        this.iAnzahlRaeder = iAnzahlRaeder;
-    }
+    private int iAnzahlraeder;
+    private int fahrzeughoehe;
 
     public Auto() {
-        this.iLeistung =0;
-        this.sFarbe ="keine Angabe";
-        this.iAnzahlReader =0;
+        this.iLeistung=0;
+        this.sFarbe="keine Angabe";
+        this.iAnzahlraeder=0;
+        this.fahrzeughoehe=0;
     }
-
-    public int getiAnzahlRaeder() {
-        return iAnzahlRaeder;
+    public Auto(int iLeistung, String sFarbe, int iAnzahlraeder, int fahrzeughoehe) {
+        this.iLeistung = iLeistung;
+        this.sFarbe = sFarbe;
+        this.iAnzahlraeder = iAnzahlraeder;
+        this.fahrzeughoehe=fahrzeughoehe;
     }
-
-    public void setiAnzahlRaeder(int iAnzahlRaeder) {
-        this.iAnzahlRaeder = iAnzahlRaeder;
+    public int getFahrzeughoehe() {
+        return fahrzeughoehe;
     }
-
+    public void setFahrzeughoehe(int fahrzeughoehe) {
+        this.fahrzeughoehe = fahrzeughoehe;
+    }
     public int getiLeistung() {
         return iLeistung;
     }
-
     public void setiLeistung(int iLeistung) {
         this.iLeistung = iLeistung;
     }
-
     public String getsFarbe() {
         return sFarbe;
     }
-
+    public int getiAnzahlraeder() {
+        return iAnzahlraeder;
+    }
+    public void setiAnzahlraeder(int iAnzahlraeder) {
+        this.iAnzahlraeder = iAnzahlraeder;
+    }
     public void setsFarbe(String sFarbe) {
         this.sFarbe = sFarbe;
-    }
 
+    }
     public String getInfoAuto(){
-        return "Auto Farbe ist" + this.getsFarbe()+"mit Leistung"+this.getiLeistung() + "Anzahl Raeder" + this.getiAnzahlRaeder();
+        return "Auto Farbe ist "+ this.getsFarbe()+
+                " mit Leistung " + this.getiLeistung() +
+                " und das Auto hat "+ this.getiAnzahlraeder()+" R\u00e4der "+
+                "Autohöhe "+ this.getFahrzeughoehe();
     }
 }
