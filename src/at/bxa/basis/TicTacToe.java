@@ -4,7 +4,8 @@ public class TicTacToe {
     private static char[][] board = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
     private static char currentPlayer = 'X';
 
-    public static void main(String[] args) {
+
+     public static void main(String[] args) {
         printBoard();
         while (true) {
             makeMove();
@@ -20,7 +21,8 @@ public class TicTacToe {
         }
     }
 
-    private static void printBoard() {
+
+     private static void printBoard() {
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
             System.out.print("| ");

@@ -56,8 +56,49 @@ public class Garage {
         }
     }
 
+    public void getAutoFarbe(String farbe){
+        System.out.println("Folgende Auto mit Farbe " + farbe + "sind in der Liste:");
+        for ( Auto a : autoliste) {
+            if (a.getsFarbe().equals(farbe)) {
+                System.out.println(a.getInfoAuto());
+            }
+        }
+    }
+    // Suche Autos mit Leistung von, bis
+
+    public void getAutoLeistung(int lmin, int lmax) {
+        System.out.println("Folgende Auto mit Leistung von " + lmin + "bis max "+ lmax + "sind in der Liste ");
+        for ( Auto a : autoliste) {
+            if (a.getiLeistung() > lmin && a.getiLeistung() <lmax) {
+                System.out.println(a.getInfoAuto());
+            }
+        }
+    }
+
     public int getGesamtFahrzeugeugeUebereinander(){
         int wert =0;
+        for ( Auto a : autoliste) {
+            wert += a.getFahrzeughoehe();
+        }
         return wert;
     }
+    //Wir suchen nach Autos mit Farbe x
+    //Suche Autos mit Leistung von, bis
+
+    public void loescheAutosFarbe(String farbe) {
+        //aus der Liste entfernen
+        int counter = 0;
+        for (int i = autoliste.size() - 1; i >= 0; i--) {
+            if (autoliste.get(i).getsFarbe().equals(farbe)) {
+                autoliste.remove(i);
+                counter++;
+            }
+        }
+        System.out.println("Es wurden " + counter + " " + farbe + " Autos gelöscht!");
+    }
+
+
+
+
 }
+
